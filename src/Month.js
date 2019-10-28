@@ -33,7 +33,7 @@ class Month extends Component {
     this.state = {};
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.selectingRange !== undefined) {
       this.setState({
         selectingRangeStart: nextProps.selectingRange[0].month(),
