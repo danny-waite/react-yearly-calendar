@@ -33,15 +33,6 @@ class Month extends Component {
     this.state = {};
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.selectingRange !== undefined) {
-      this.setState({
-        selectingRangeStart: nextProps.selectingRange[0].month(),
-        selectingRangeEnd: nextProps.selectingRange[1].month()
-      });
-    }
-  }
-
   shouldComponentUpdate(nextProps) {
     const { month, selectingRange, selectedRange } = this.props;
     const { selectingRangeStart, selectingRangeEnd } = this.state;
@@ -111,6 +102,16 @@ class Month extends Component {
     }
 
     return false;
+  }
+
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (nextProps.selectingRange !== undefined) {
+      this.setState({
+        selectingRangeStart: nextProps.selectingRange[0].month(),
+        selectingRangeEnd: nextProps.selectingRange[1].month()
+      });
+    }
   }
 
   dayClicked(day, classes) {
