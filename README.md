@@ -47,6 +47,7 @@ ReactDOM.render(
 | selectRange | React.PropTypes.bool | enable selecting ranges | false |
 | selectedRange | `[moment.js obj, moment.js obj]` | selected range of dates in the form `[start, end]` | |
 | customClasses | React.PropTypes.object, React.PropTypes.func | custom days/periods coloring (see section below) | |
+| titles | React.PropTypes.func | function mapping dates to html titles | |
 
 #### CalendarControls
 

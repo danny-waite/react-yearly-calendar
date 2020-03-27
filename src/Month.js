@@ -16,6 +16,7 @@ const propTypes = {
   selectRange: PropTypes.bool.isRequired,
   selectedRange: PropTypes.arrayOf(momentObj),
   customClasses: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+  titles: PropTypes.func,
   dayClicked: PropTypes.func.isRequired,
   dayHovered: PropTypes.func.isRequired
 };
@@ -23,7 +24,8 @@ const propTypes = {
 const defaultProps = {
   selectingRange: undefined,
   selectedRange: undefined,
-  customClasses: undefined
+  customClasses: undefined,
+  titles: undefined
 };
 
 class Month extends Component {
@@ -137,7 +139,8 @@ class Month extends Component {
       selectingRange,
       selectRange,
       selectedRange,
-      customClasses
+      customClasses,
+      titles
     } = this.props;
     const monthStart = moment([year, month, 1]); // current day
 
@@ -159,6 +162,7 @@ class Month extends Component {
 
       // pick appropriate classes
       const classes = [];
+      const title = titles instanceof Function ? titles(day) : undefined;
       if (i <= prevMonthDaysCount) {
         classes.push('prev-month');
       } else if (i > numberOfDays + prevMonthDaysCount) {
@@ -240,6 +244,7 @@ class Month extends Component {
           classes={classes.join(' ')}
           dayClicked={d => this.dayClicked(d, classes.join(' '))}
           dayHovered={d => this.dayHovered(d)}
+          title={title}
         />
       );
     });
