@@ -6,12 +6,14 @@ const propTypes = {
   classes: PropTypes.string,
   dayClicked: PropTypes.func.isRequired,
   dayHovered: PropTypes.func.isRequired,
-  day: momentObj
+  day: momentObj,
+  title: PropTypes.string
 };
 
 const defaultProps = {
   classes: '',
-  day: null
+  day: null,
+  title: undefined
 };
 
 class Day extends Component {
@@ -33,9 +35,9 @@ class Day extends Component {
   }
 
   render() {
-    const { classes, day } = this.props;
+    const { classes, day, title } = this.props;
     return (
-      <td onClick={this.onClick} onMouseEnter={this.onHover} className={classes}>
+      <td onClick={this.onClick} onMouseEnter={this.onHover} className={classes} title={title}>
         <span className="day-number">{day === null ? '' : day.date()}</span>
       </td>
     );
