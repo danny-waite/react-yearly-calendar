@@ -133,7 +133,7 @@ class Demo extends React.Component {
         </div>
 
         <h5>
-          Proudly brought to you by <a href="http://belka.us/en">Belka</a>
+          Proudly brought to you by <a href="https://belkadigital.com/">Belka</a>
         </h5>
 
         <div className="options">

@@ -23,7 +23,7 @@
     "yearly",
     "react-component"
   ],
-  "author": "Belka <giovanni@belka.us> (http://belka.us)",
+  "author": "Belka <giovanni@belkadigital.com> (https://belkadigital.com/)",
   "license": "MIT",
   "dependencies": {
     "moment": "^2.13.0",
