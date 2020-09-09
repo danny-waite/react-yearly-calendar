@@ -1,6 +1,6 @@
 # React-yearly-calendar
 
-[React](http://facebook.github.io/react/) calendar component with yearly view.
+[React](https://facebook.github.io/react/) calendar component with yearly view.
 
 [![npm version](https://badge.fury.io/js/react-yearly-calendar.svg)](https://badge.fury.io/js/react-yearly-calendar)
 ![Alt text](https://img.shields.io/badge/license-MIT-green.svg?style=flat)
@@ -10,7 +10,7 @@ $ npm install react-yearly-calendar
 ```
 
 # Demo
-**[http://belkalab.github.io/react-yearly-calendar/](http://belkalab.github.io/react-yearly-calendar)**
+**[http://belkalab.github.io/react-yearly-calendar/](https://belkalab.github.io/react-yearly-calendar)**
 
 ![http://belkalab.github.io/react-yearly-calendar/](examples/screen.png)
 
@@ -98,7 +98,7 @@ ____
 
 ### Responsive
 
-A first attempt at making this design responsive can be seen [here](http://code.belka.us/react-yearly-calendar/responsive/) (window width < 1200px triggers mobile layout). Suggestions and feedback on this is welcome [on issue #10](https://github.com/BelkaLab/react-yearly-calendar/issues/10)
+A first attempt at making this design responsive can be seen [here](https://belkalab.github.io/react-yearly-calendar/responsive/) (window width < 1200px triggers mobile layout). Suggestions and feedback on this are welcome [on issue #10](https://github.com/BelkaLab/react-yearly-calendar/issues/10)
 
 ## Custom days/periods colors
 
@@ -153,16 +153,14 @@ $ npm install
 ```
 
 ## License
-react-yearly-calendar is Copyright (c) 2016-2018 Belka s.r.l.
+react-yearly-calendar is Copyright (c) 2016-2020 Belka s.r.l.
 
 It is free software, and may be redistributed under the terms specified in the LICENSE file (TL;DR: **MIT license**).  
 
 ## About Belka
-![logo_rosso.jpg](https://s11.postimg.org/4emy4pklv/logo_rosso.jpg)
+[Belka](https://belkadigital.com) is a Digital Agency focused on design, mobile applications development and custom solutions.
+We love open source software! You can [see our projects](https://belkadigital.com/case-studies) or look at our case studies.
 
-[Belka](http://belka.us/en) is a Digital Agency focused on design, mobile applications development and custom solutions.
-We love open source software! You can [see our projects](http://belka.us/en/portfolio/) or look at our case studies.
+Interested? [Hire us](https://belkadigital.com/contacts) to help you build your next amazing project.
 
-Interested? [Hire us](http://belka.us/en/contacts/) to help you build your next amazing project.
-
-[www.belka.us](http://belka.us/en)
+[www.belkadigital.com](https://belkadigital.com)
