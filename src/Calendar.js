@@ -11,6 +11,7 @@ const propTypes = {
   showDaysOfWeek: PropTypes.bool,
   showWeekSeparators: PropTypes.bool,
   firstDayOfWeek: PropTypes.number,
+  useIsoWeekday: PropTypes.bool,
   selectRange: PropTypes.bool,
   onPickDate: PropTypes.func,
   onPickRange: PropTypes.func,
@@ -24,6 +25,7 @@ const defaultProps = {
   showDaysOfWeek: true,
   showWeekSeparators: true,
   firstDayOfWeek: 0,
+  useIsoWeekday: false,
   selectRange: false,
   onPickDate: null,
   onPickRange: null,
@@ -93,15 +95,13 @@ class Calendar extends Component {
   }
 
   renderDaysOfWeek() {
-    const { firstDayOfWeek, forceFullWeeks, showWeekSeparators } = this.props;
+    const { useIsoWeekday, firstDayOfWeek, forceFullWeeks, showWeekSeparators } = this.props;
     const totalDays = forceFullWeeks ? 42 : 37;
 
     const days = [];
     range(firstDayOfWeek, totalDays + firstDayOfWeek).forEach(i => {
-      const day = moment()
-        .weekday(i)
-        .format('ddd')
-        .charAt(0);
+      const momentDay = useIsoWeekday ? moment().isoWeekday(i) : moment().weekday(i);
+      const day = momentDay.format('ddd').charAt(0);
 
       if (showWeekSeparators) {
         if (i % 7 === firstDayOfWeek && days.length) {
