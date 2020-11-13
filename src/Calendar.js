@@ -100,7 +100,7 @@ class Calendar extends Component {
     range(firstDayOfWeek, totalDays + firstDayOfWeek).forEach(i => {
       const day = moment()
         .weekday(i)
-        .format('dd')
+        .format('ddd')
         .charAt(0);
 
       if (showWeekSeparators) {
