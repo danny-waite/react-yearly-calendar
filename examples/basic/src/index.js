@@ -12,7 +12,7 @@ class Demo extends React.Component {
 
     this.state = {
       year: today.year(),
-      selectedDay: today,
+      selectedDay: null,
       selectedRange: [today, moment(today).add(15, 'day')],
       showDaysOfWeek: true,
       showTodayBtn: true,
@@ -129,6 +129,7 @@ class Demo extends React.Component {
             selectedRange={selectedRange}
             onPickDate={date => this.datePicked(date)}
             onPickRange={(start, end) => this.rangePicked(start, end)}
+            data={[{ date: '2021-02-10', price: 123.45, bookable: true }]}
           />
         </div>
 

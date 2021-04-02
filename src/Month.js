@@ -18,14 +18,16 @@ const propTypes = {
   customClasses: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   titles: PropTypes.func,
   dayClicked: PropTypes.func.isRequired,
-  dayHovered: PropTypes.func.isRequired
+  dayHovered: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(PropTypes.object)
 };
 
 const defaultProps = {
   selectingRange: undefined,
   selectedRange: undefined,
   customClasses: undefined,
-  titles: undefined
+  titles: undefined,
+  data: []
 };
 
 class Month extends Component {
@@ -35,7 +37,18 @@ class Month extends Component {
     this.state = {};
   }
 
-  shouldComponentUpdate(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (nextProps.selectingRange !== undefined) {
+      this.setState({
+        selectingRangeStart: nextProps.selectingRange[0].month(),
+        selectingRangeEnd: nextProps.selectingRange[1].month()
+      });
+    }
+  }
+
+  // eslint-disable-next-line camelcase
+  UNSAFE_shouldComponentUpdate(nextProps) {
     const { month, selectingRange, selectedRange } = this.props;
     const { selectingRangeStart, selectingRangeEnd } = this.state;
 
@@ -106,16 +119,6 @@ class Month extends Component {
     return false;
   }
 
-  // eslint-disable-next-line camelcase
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.selectingRange !== undefined) {
-      this.setState({
-        selectingRangeStart: nextProps.selectingRange[0].month(),
-        selectingRangeEnd: nextProps.selectingRange[1].month()
-      });
-    }
-  }
-
   dayClicked(day, classes) {
     const { dayClicked } = this.props;
     dayClicked(day, classes);
@@ -140,7 +143,8 @@ class Month extends Component {
       selectRange,
       selectedRange,
       customClasses,
-      titles
+      titles,
+      data
     } = this.props;
     const monthStart = moment([year, month, 1]); // current day
 
@@ -237,6 +241,13 @@ class Month extends Component {
           days.push(<td className="week-separator" key={`seperator-${i}`} />);
         }
       }
+
+      const dayData = data.find(d => moment(d.date).isSame(day));
+      if (dayData) {
+        if (dayData.bookable) classes.push('day-bookable');
+        else classes.push('day-not-bookable');
+      }
+
       days.push(
         <Day
           key={`day-${i}`}
@@ -245,6 +256,7 @@ class Month extends Component {
           dayClicked={d => this.dayClicked(d, classes.join(' '))}
           dayHovered={d => this.dayHovered(d)}
           title={title}
+          data={dayData}
         />
       );
     });

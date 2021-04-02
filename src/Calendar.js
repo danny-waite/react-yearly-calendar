@@ -17,7 +17,8 @@ const propTypes = {
   onPickRange: PropTypes.func,
   selectedDay: momentObj,
   customClasses: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
-  titles: PropTypes.func
+  titles: PropTypes.func,
+  data: PropTypes.arrayOf(PropTypes.object)
 };
 
 const defaultProps = {
@@ -31,7 +32,8 @@ const defaultProps = {
   onPickRange: null,
   selectedDay: moment(),
   customClasses: null,
-  titles: null
+  titles: null,
+  data: []
 };
 
 class Calendar extends Component {

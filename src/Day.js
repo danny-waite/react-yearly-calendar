@@ -7,13 +7,15 @@ const propTypes = {
   dayClicked: PropTypes.func.isRequired,
   dayHovered: PropTypes.func.isRequired,
   day: momentObj,
-  title: PropTypes.string
+  title: PropTypes.string,
+  data: PropTypes.objectOf()
 };
 
 const defaultProps = {
   classes: '',
   day: null,
-  title: undefined
+  title: undefined,
+  data: undefined
 };
 
 class Day extends Component {
@@ -35,10 +37,11 @@ class Day extends Component {
   }
 
   render() {
-    const { classes, day, title } = this.props;
+    const { classes, day, title, data } = this.props;
     return (
       <td onClick={this.onClick} onMouseEnter={this.onHover} className={classes} title={title}>
         <span className="day-number">{day === null ? '' : day.date()}</span>
+        <p style={{ lineHeight: 0, fontSize: '9px' }}>{data && data.price}</p>
       </td>
     );
   }

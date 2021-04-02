@@ -8,12 +8,11 @@ table.calendar {
 }
 
 table.calendar thead {
-  background-color: #5A5A5A;
+  background-color: #5a5a5a;
   color: white;
   margin-bottom: 3px;
-  border-bottom: 2px solid white
+  border-bottom: 2px solid white;
 }
-
 
 table.calendar thead th {
   font-weight: normal;
@@ -77,7 +76,7 @@ table.calendar td.selected {
 
 /* Selected range */
 table.calendar td.range {
-  background-color: rgba(255,69,0, 0.7);
+  background-color: rgba(255, 69, 0, 0.7);
   font-weight: bold;
   color: white;
 }
@@ -131,7 +130,7 @@ div.calendar-controls .today {
 div#calendar {
   position: relative;
   border-radius: 5px;
-  border: 1px solid #5A5A5A;
+  border: 1px solid #5a5a5a;
   background-color: white;
   overflow: hidden;
   -webkit-touch-callout: none;
@@ -147,18 +146,21 @@ div#root {
   margin: 50px auto;
 }
 
-h2,h3,h4,h5 {
+h2,
+h3,
+h4,
+h5 {
   text-align: center;
   color: #404040;
 }
 
 h1 {
   text-align: center;
-  color: #B10909;
+  color: #b10909;
 }
 
 a {
-  color: #B10909;
+  color: #b10909;
   font-weight: bolder;
   text-decoration: none;
 }
@@ -168,7 +170,7 @@ a.demoLink {
 }
 
 div.options {
-  border: 1px solid #B9B9B9;
+  border: 1px solid #b9b9b9;
   border-radius: 5px;
   padding: 10px 15px;
   margin-top: 30px;
@@ -176,4 +178,12 @@ div.options {
 
 div.options select {
   margin-left: 10px;
+}
+
+.day-bookable {
+  background-color: #e6f3f5 !important;
+}
+
+.day-not-bookable {
+  background-color: #ffafb7 !important;
 }
