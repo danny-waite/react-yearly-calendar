@@ -41,7 +41,7 @@ class Day extends Component {
     return (
       <td onClick={this.onClick} onMouseEnter={this.onHover} className={classes} title={title}>
         <span className="day-number">{day === null ? '' : day.date()}</span>
-        <p style={{ lineHeight: 0, fontSize: '9px' }}>{data && data.price}</p>
+        <p style={{ lineHeight: 0, fontSize: '9px' }}>{data && data.price.toFixed(2)}</p>
       </td>
     );
   }
